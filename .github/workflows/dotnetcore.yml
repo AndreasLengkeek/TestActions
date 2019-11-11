@@ -22,3 +22,9 @@ jobs:
       
     - name: Package everything with dotnet
       run: dotnet publish --configuration Release
+
+    - name: Publish artifacts to GitHub
+      uses: actions/upload-artifact@v1.0.0
+      with: 
+        name: WebAPI
+        path: ${GITHUB_WORKSPACE}/bin/Release/netcoreapp3.0/publish/
