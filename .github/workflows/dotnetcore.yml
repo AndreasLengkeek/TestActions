@@ -28,3 +28,11 @@ jobs:
       with: 
         name: WebAPI
         path: bin/Release/netcoreapp3.0/publish/
+  deploy:
+    runs-on: [windows-2019]
+    
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v1.0.0
+        with:
+          name: WebAPI
